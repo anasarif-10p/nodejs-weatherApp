@@ -6,7 +6,9 @@ const express = require("express");
 const hbs = require("hbs");
 import path from "path";
 import { fileURLToPath } from "url";
+
 const app = express();
+const port = process.env.PORT || 3000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -92,6 +94,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server is on port 3000");
+app.listen(port, () => {
+  console.log("server is on port " + port);
 });
